@@ -1,22 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 13:46:22 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/05/12 13:46:25 by lucsanto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_iterative_factorial(int nb)
 {
+	int	total;
+
 	if (nb < 0)
 		return (0);
-	else if (nb == 0)
-		return (1);
-	else if (nb == 1)
-		return (1);
-
-	int	aux;
-
-	aux = nb;
-	nb--;
-	while (nb > 0)
+	total = 1;
+	while (nb > 1)
 	{
-		aux = aux * nb;
+		total = total * nb;
 		nb--;
 	}
-	return (aux);
+	return (total);
 }
 // #include <stdio.h>
 

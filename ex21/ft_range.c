@@ -1,63 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 13:50:39 by lucsanto          #+#    #+#             */
-/*   Updated: 2026/05/12 13:50:41 by lucsanto         ###   ########.fr       */
+/*   Created: 2026/05/12 13:51:00 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/05/12 13:51:02 by lucsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
 	int	i;
+	int	diff;
+	int	*range;
 
 	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dest;
-
-	dest = (char *)malloc(ft_strlen(src) + 1);
-	if (!dest)
+	diff = max - min;
+	if (min >= max)
 		return (NULL);
-	dest = ft_strcpy(dest, src);
-	return (dest);
+	range = (int *)malloc(sizeof(int) * diff);
+	while (i < diff)
+		range[i++] = min++;
+	return (range);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char src[] = "teste";
-// 	char *dest;
+// 	int *list;
+// 	int size;
+// 	int i;
 
-// 	dest = ft_strdup(src);
-
-// 	printf("%s", dest);
-// 	return (0);
+// 	list = ft_range(5, 15);
+// 	size = 15 - 5;
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d, ", list[i]);
+// 		i++;
+// 	}
 // }

@@ -1,15 +1,21 @@
-ft_putchar(int c);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucsanto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/12 13:27:26 by lucsanto          #+#    #+#             */
+/*   Updated: 2026/05/12 13:27:28 by lucsanto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putchar(int c);
 
 void	ft_is_negative(int n)
 {
-	int	P;
-	int	N;
-
-	P = 80;
-	N = 78;
-
 	if (n < 0)
-		ft_putchar(N);
+		ft_putchar('N');
 	else
-		ft_putchar(P);
+		ft_putchar('P');
 }
